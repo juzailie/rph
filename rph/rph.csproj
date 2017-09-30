@@ -121,11 +121,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavbarController.cs" />
+    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Domain\Data.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interface\ISubject.cs" />
     <Compile Include="Models\Navbar.cs" />
+    <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -913,6 +916,7 @@
     <Content Include="Views\Home\Grid.cshtml" />
     <Content Include="Views\Home\Blank.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Subject\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
