@@ -14,7 +14,7 @@ namespace rph.Controllers
             return View();
         }
 
-        public ActionResult Add()
+        public ActionResult Form(string action)
         {
             return View();
         }

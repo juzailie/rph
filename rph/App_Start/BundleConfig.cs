@@ -23,6 +23,9 @@ namespace rph
                       "~/bower_components/bootstrap/dist/js/bootstrap.min.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap-notify").Include(
+                "~/Scripts/bootstrap-notify-3.1.5/bootstrap-notify.min.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/bower_components/bootstrap/dist/css/bootstrap.min.css",
                       "~/bower_components/metisMenu/dist/metisMenu.min.css",
