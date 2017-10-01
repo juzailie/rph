@@ -8,7 +8,7 @@ namespace rph.Interface
 {
     interface ISubject
     {
-        string SubjectID { get; set; }
+        string ID { get; set; }
 
         string Name { get; set; }
 

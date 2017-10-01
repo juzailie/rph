@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rph.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,8 +17,19 @@ namespace rph.Controllers
 
         public ActionResult Form(string action)
         {
-            return View();
+            var model = new Subject();
+            return View(model);
         }
+        
+        [HttpPost]
+        public ActionResult Form(Subject model)
+        {
+            if (ModelState.IsValid)
+            {
+                
+            }
 
+            return View(model);
+        }
     }
 }

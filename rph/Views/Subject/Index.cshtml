@@ -14,7 +14,8 @@
 <div class="row">
     <div class="col-lg-12">
         <p>
-            <button type="button" class="btn btn-primary">Add Subject</button>
+            @*<button type="button" class="btn btn-primary">Add Subject</button>*@
+            <a href="/Subject/Form" class="btn btn-primary">Add Subject</a>
         </p>
     </div>
     <!-- /.col-lg-12 -->
@@ -24,9 +25,6 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                DataTables Advanced Tables
-            </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="dataTable_wrapper">
@@ -64,7 +62,22 @@
         $('#example').DataTable({
             "processing": true,
             "serverSide": true,
-            "ajax": "../server_side/scripts/server_processing.php"
+            "ajax": {
+                url: "api/subject/GetData",
+                type: 'POST'
+            },
+            "columns": [
+                { "data": "Name" },
+                { "data": "Code" },
+                { "data": "CreatedOn" },
+                { "data": "CreatedBy" }
+            ],
+            "language": {
+                "emptyTable": "There are no customers at present.",
+                "zeroRecords": "There were no matching customers found.",
+                "search": "",
+                "searchPlaceholder": "Search..."
+            }
         });
 
     });

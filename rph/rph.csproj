@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>rph</RootNamespace>
-    <AssemblyName>sb-admin-2.Web</AssemblyName>
+    <AssemblyName>rph</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -135,12 +135,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavbarController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
+    <Compile Include="DAL\SubjectContext.cs" />
+    <Compile Include="DAL\SubjectInitializer.cs" />
     <Compile Include="Domain\Data.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interface\ISubject.cs" />
     <Compile Include="Models\Navbar.cs" />
+    <Compile Include="Models\SearchRequest.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApiControllers\SubjectController.cs" />

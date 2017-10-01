@@ -7,22 +7,38 @@ using System.Web.Http;
 
 using rph.Models;
 using Newtonsoft.Json;
+using rph.DAL;
 
 namespace rph.ApiControllers
 {
     public class SubjectController : ApiController
     {
+
+        private SubjectContext db = new SubjectContext();
+
         // GET api/<controller>
         public IHttpActionResult Get()
         {
-            var subjects = new List<Subject>() { 
-                new Subject(){ SubjectID = Guid.NewGuid().ToString(), Name = "English", Code = "KBSR ENGLISH"},
-                new Subject(){ SubjectID = Guid.NewGuid().ToString(), Name = "Melayu", Code = "KBSR MELAYU"}
+            var sb = db.Subjects.ToList();
+
+            return Ok(sb);
+        }
+
+        [HttpPost]
+        public IHttpActionResult GetData([FromBody] DataTableAjaxPostModel model)
+        {
+            var sb = db.Subjects.ToList();
+
+            var response = new
+            {
+                // this is what datatables wants sending back
+                draw = model.draw,
+                recordsTotal = sb.Count,
+                recordsFiltered = sb.Count,
+                data = sb
             };
 
-            //var subjectSerialized = JsonConvert.SerializeObject(subjects);
-
-            return Ok(subjects);
+            return Ok(response);
         }
 
         // GET api/<controller>/5
