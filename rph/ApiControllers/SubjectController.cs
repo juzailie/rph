@@ -5,14 +5,24 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+using rph.Models;
+using Newtonsoft.Json;
+
 namespace rph.ApiControllers
 {
     public class SubjectController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var subjects = new List<Subject>() { 
+                new Subject(){ SubjectID = Guid.NewGuid().ToString(), Name = "English", Code = "KBSR ENGLISH"},
+                new Subject(){ SubjectID = Guid.NewGuid().ToString(), Name = "Melayu", Code = "KBSR MELAYU"}
+            };
+
+            //var subjectSerialized = JsonConvert.SerializeObject(subjects);
+
+            return Ok(subjects);
         }
 
         // GET api/<controller>/5
